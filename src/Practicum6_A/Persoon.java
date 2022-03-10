@@ -6,14 +6,13 @@ import java.util.Locale;
 public class Persoon {
     private String naam;
     private double budget;
-    private String budgetString;
     private ArrayList<Game> mijnGames = new ArrayList<>();
 
     public Persoon(String nm, double bud){
         naam = nm; budget = bud;
     }
     public double getBudget(){
-        budgetString = String.format(Locale.US, "%.2f", budget);
+        String budgetString = String.format(Locale.US, "%.2f", budget);
         budget = Double.parseDouble(budgetString);
         return budget;
     }
