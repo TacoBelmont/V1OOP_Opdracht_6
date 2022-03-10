@@ -2,6 +2,7 @@ package Practicum6_A;
 
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Objects;
 
 public class Persoon {
     private String naam;
@@ -43,6 +44,16 @@ public class Persoon {
         }
         return false;
     }
+
+    public Game zoekGameOpNaam(String g) {
+        for (Game game : mijnGames) {
+            if (Objects.equals(g, game.getNaam())) {
+                return game;
+            }
+        }
+        return null;
+    }
+
     public String toString()
     {
         String budgetString = Double.toString(this.getBudget()).replace('.',',');
