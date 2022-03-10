@@ -54,6 +54,15 @@ public class Persoon {
         return gameList;
     }
 
+    public Game zoekGameOpNaam(String g) {
+        for (Game game : mijnGames) {
+            if (Objects.equals(g, game.getNaam())) {
+                return game;
+            }
+        }
+        return null;
+    }
+
     public String toString()
     {
         String budgetString = Double.toString(this.getBudget()).replace('.',',');
