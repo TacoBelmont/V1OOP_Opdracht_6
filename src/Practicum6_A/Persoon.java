@@ -45,13 +45,13 @@ public class Persoon {
         return false;
     }
 
-    public Game zoekGameOpNaam(String g) {
-        for (Game game : mijnGames) {
-            if (Objects.equals(g, game.getNaam())) {
-                return game;
+    public ArrayList<Game> bepaalGamesNietInBezit(ArrayList<Game> gameList){
+        for (Game owned : mijnGames){
+            if (gameList.contains(owned)){
+                gameList.remove(owned);
             }
         }
-        return null;
+        return gameList;
     }
 
     public String toString()
